@@ -1,0 +1,14 @@
+SELECT count(length)
+FROM film
+WHERE length >
+(SELECT AVG(length)
+ FROM film);
+ 
+select count(rental_Rate)
+from film
+	where rental_rate = (select max(rental_rate)from film);
+
+select title,rental_rate,replacement_cost from film
+where rental_rate= (Select min(rental_rate)from film) and replacement_cost= (Select min(replacement_cost)from film)
+
+
